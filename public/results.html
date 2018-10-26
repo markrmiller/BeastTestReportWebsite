@@ -16,7 +16,7 @@
   <script>
   $(function() {
 
-      $('#TSVTable').CSVToTable('out/website-template/results.tsv', { loadingText: 'Loading Good Data...', loadingImage: 'images/loading.gif', startLine: 0, separator: "\t", tableClass: 'TSVTableId', trClass: 'TableRow' }).bind("loadComplete", function() { 
+      $('#TSVTable').CSVToTable('results.tsv', { loadingText: 'Loading Good Data...', loadingImage: 'images/loading.gif', startLine: 0, separator: "\t", tableClass: 'TSVTableId', trClass: 'TableRow' }).bind("loadComplete", function() { 
         $('#TSVTableId').tablesorter({
           headers: {
             2: { sorter: "digit", empty : "top" }, // sort empty cells to the top
