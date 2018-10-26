@@ -4,19 +4,19 @@
   <meta charset="utf-8" />
   <title>BeastTestReport</title>
 
-  <link rel="stylesheet" href="css/csvtable.css" type="text/css" />
+  <link rel="stylesheet" href="../css/csvtable.css" type="text/css" />
 
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/jquery.csvToTable.js"></script>
-  <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
-  <script type="text/javascript" src="js/jquery.filtertable.min.js"></script>
-  <script type="text/javascript" src="js/bindWithDelay.js"></script>
-  <script type="text/javascript" src="js/onDelay.js"></script>
+  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.csvToTable.js"></script>
+  <script type="text/javascript" src="../js/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.filtertable.min.js"></script>
+  <script type="text/javascript" src="../js/bindWithDelay.js"></script>
+  <script type="text/javascript" src="../js/onDelay.js"></script>
   
   <script>
   $(function() {
 
-      $('#TSVTable').CSVToTable('RESULTS_TSV', { loadingText: 'Loading Good Data...', loadingImage: 'images/loading.gif', startLine: 0, separator: "\t", tableClass: 'TSVTableId', trClass: 'TableRow' }).bind("loadComplete", function() { 
+      $('#TSVTable').CSVToTable('RESULTS_TSV', { loadingText: 'Loading Good Data...', loadingImage: '../images/loading.gif', startLine: 0, separator: "\t", tableClass: 'TSVTableId', trClass: 'TableRow' }).bind("loadComplete", function() { 
         $('#TSVTableId').tablesorter({
           headers: {
             2: { sorter: "digit", empty : "top" }, // sort empty cells to the top
