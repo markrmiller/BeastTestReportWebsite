@@ -1,0 +1,3 @@
+image&nbsp;&nbsp;&nbsp;	name&nbsp;	pass&nbsp;&nbsp;&nbsp;	fail&nbsp;&nbsp;&nbsp;	errors&nbsp;&nbsp;&nbsp;	skipped&nbsp;&nbsp;&nbsp;	avg time&nbsp;	fail msg&nbsp;
+<img src="images/passed.png" height="17" width="17">	org.apache.solr.update.TestUpdate#testUpdateLogThrowsForUnknownTypes	12	0	 0	0	.01	
+<img src="images/passed.png" height="17" width="17">	org.apache.solr.update.TestUpdate#testUpdatableDocs	12	0	 0	0	.89	

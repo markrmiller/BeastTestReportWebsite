@@ -1,0 +1,117 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700|Source+Sans+Pro:100,300,400,600,700,300italic,400italic,600italic,700italic");
+
+#TSVTable {
+	background-color: #7ea7ee;
+}
+
+
+#TSVTableId tr > *:nth-child(8) {
+    display: none;
+}
+
+TABLE.TSVTableId {
+	font: 0.8em Verdana,Arial,Geneva,Helvetica,sans-serif;
+	border-collapse: collapse;
+	width: 450px;
+	background: #7ea7ee;
+}
+
+/* Header */
+TABLE.TSVTableId THEAD TR {
+	background: #7ea7ee;
+}
+TABLE.TSVTableId TH {
+	font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+	font-size: 1.2em;
+}
+
+/* Table Cells */
+TABLE.TSVTableId TD, TABLE.TSVTableId TH {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #FFFFFF;
+	border-top: 1px solid transparent;
+}
+
+.striped {
+  background: #F9F9F9;
+}
+
+/* Hover color for all rows */
+TABLE.TSVTableId TR:hover {
+	background: #E8EDFF;
+}
+
+thead tr .header {
+  background-image: url(../images/bg.gif);
+  background-size: 1.333em;
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+  padding-right: 2em;
+  border-right: 1px solid #ccc;
+}
+
+thead tr .headerSortUp {
+  background-image: url(../images/asc.gif);
+}
+
+thead tr .headerSortDown {
+  background-image: url(../images/desc.gif);
+}
+
+
+.filter-table {
+  color: #ffffff;
+  padding-left: 0.8em;
+  font: 100 1.0em/2.1em "Roboto Condensed";
+}
+
+.filter-table .quick:hover { 
+  text-decoration: underline; 
+}
+
+td.alt { 
+  background-color: #e1a14f;
+  background-color: rgb(225, 161, 79);
+}
+
+.tableTitle {
+  left: 0.75rem;
+  font: 100 1.5em/2em "Roboto Condensed";
+  width: calc( 100% - 202px - 1em );
+}
+
+form {
+  overflow: hidden;
+}
+
+.filter-table input {
+  float: right;
+  clear: both;
+  padding: 0px 0.8em;
+  border: none;
+  background: rgba(224, 224, 225, 0.9);
+  color: #000;
+  font: 100 1.0em/2.1em "Roboto Condensed";
+  -webkit-appearance: none;
+}
+
+TABLE.TSVTableId {
+  font: 1em/1.5em "Source Sans Pro", segoe ui, arial, sans-serif;
+  background-color: #fff;
+  margin: 0px;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+TABLE.TSVTableId th {
+  background-color: #efefef;
+  border-bottom: solid 0.125em #dfdfdf;
+  color: #444;
+  padding: 0.5em 0.5em;
+  text-transform: uppercase;
+  font: 700 .9em/.9em roboto condensed, arial, sans-serif;
+}

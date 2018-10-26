@@ -1,6 +1,0 @@
-Executing 6 suites with 4 JVMs.
-
-Started J0 PID(658@3f1999ad886d).
-Started J2 PID(661@3f1999ad886d).
-Started J1 PID(669@3f1999ad886d).
-Started J3 PID(659@3f1999ad886d).
