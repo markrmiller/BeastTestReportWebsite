@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>BeastTestReport</title>
+
+  <link rel="stylesheet" href="/css/csvtable.css" type="text/css" />
+
+  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.csvToTable.js"></script>
+  <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.filtertable.min.js"></script>
+  <script type="text/javascript" src="/js/bindWithDelay.js"></script>
+  <script type="text/javascript" src="/js/onDelay.js"></script>
+  
+  <script>
+  $(function() {
+
+      $('#TSVTable').CSVToTable('search.tsv', { loadingText: 'Loading Good Data...', loadingImage: '/images/loading.gif', startLine: 0, separator: "\t", tableClass: 'TSVTableId', trClass: 'TableRow' }).bind("loadComplete", function() { 
+        $('#TSVTableId').tablesorter({
+          headers: {
+            2: { sorter: "digit", empty : "top" }, // sort empty cells to the top
+            3: { sorter: "digit", string: "max" }, // non-numeric content is treated as a MAX value
+            4: { sorter: "digit", string: "max" }, // non-numeric content is treated as a MAX value
+          }, sortList: [[4,1],[3,1],[5,1],[2,0],[1,0]] });
+        
+        $('#TSVTable').bind("sortEnd", function() { 
+          $('#TSVTable').find('tr').removeClass('striped').filter(':visible:even').addClass('striped'); 
+        });
+        
+        $('#TSVTableId').filterTable({
+          minRows: 0,
+          containerTag: 'div',
+          label: 'Click headers to sort, click failed tests for more, search to the right.',
+          callback: function(term, table) {
+            table.find('tr').removeClass('striped').filter(':visible:even').addClass('striped');
+            table.find('.error').remove();
+          }
+        });
+        
+        $('#TSVTable').find('tr').removeClass('striped').filter(':visible:even').addClass('striped');
+        
+        $('#TSVTableId > thead > tr > th').click( function() {
+            $('.error').remove();
+        });
+        
+        $('#TSVTableId').find('tbody').find('tr').click( function() {
+          var index = $(this).index();
+
+          if ($(this).next('tr').attr('class') == "error") {
+             $(this).next('tr').remove();
+          } else {
+             var msg = $(this).find("td:last").html();
+             if ($.trim(msg) == '') {
+               return;
+             }
+             var index = $(this).index();
+             $(this).after("<tr class='error'><td colspan='7'>" + msg + '</td></tr>');
+          }
+
+        });
+      });
+      
+      
+  });
+  </script>
+</head>
+<body>
+
+<div class="tableTitle">
+Solr BeastTestReport<br/>
+</div>
+
+<div id="TSVSource" class="source">
+
+</div>
+
+<div id="TSVTable">
+
+</div>
+
+</body>
+</html>
