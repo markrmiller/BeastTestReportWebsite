@@ -69,7 +69,7 @@
 <body>
 
 <div class="tableTitle">
-  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_024</a>)<br/>
+  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_039</a>)<br/>
 </div>
 
 <div id="TSVSource" class="source">
@@ -96,26 +96,27 @@
   clippy.load('Genius', function(agent){
     // Do anything with the loaded agent
 
-    const move = () => {
-      agent.moveTo(250, 50)
-    }
-    move()
-    delay(() => {
+    setTimeout(() => {
+
+      agent.moveTo(537, document.getElementsByClassName('filter-table').getBoundingClientRect().top)
       agent.show(false)
-    }, 2000)
+      agent.play('Greeting')
+      agent.speak('Do you have some tests to inspect?', false)
+      agent.play('GetWizardy')
+      agent.speak('I love tests.')
+
+      agent.play('Searching')
+      agent.speak('I have an idea! We could fix these tests together!')
+      agent.play('GetAttention')
+
+      agent.play('LookLeft')
+      agent.play('GestureLeft')
 
 
 
-    const speak = () => {
-     // agent.speak('I am ' + 'a Genius!' + ', ' + talks[~~(Math.random() * talks.length)])
-      agent.animate()
-    }
-    $(agent._el).click(() => speak())
-    agent.speak("Hello my friend! Let's improve some tests!")
-    agent.animate()
-    // setInterval(() => {
-    //   agent.animate()
-    // }, 2000)
+
+
+    }, 5000)
   });
 </script>
 </body>
