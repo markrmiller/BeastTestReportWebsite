@@ -69,7 +69,7 @@
 <body>
 
 <div class="tableTitle">
-  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_036</a>)<br/>
+  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_052</a>)<br/>
 </div>
 
 <div id="TSVSource" class="source">
@@ -93,12 +93,15 @@
     'At your service',
     'Helloo'
   ]
-  clippy.load('Genius', function(agent){
-    // Do anything with the loaded agent
+  window.CLIPPY_CDN = '/avatars/'
+  clippy.load('Genius', function(agent) {
+    $(agent._el).dblclick(() => agent.hide())
+    agent.hide(true)
 
+    // Do anything with the loaded agent
+    agent.moveTo(($(document).width() / 2) - 50, $('.tableTitle')[0].offsetTop + 15)
     setTimeout(() => {
-      console.log('offset ' + $('.filter-table').offsetTop)
-      agent.moveTo(537, $('.filter-table').offsetTop)
+
       agent.show(false)
       agent.play('Greeting')
       agent.speak('Do you have some tests to inspect?', false)
@@ -111,13 +114,21 @@
 
       agent.play('LookLeft')
       agent.play('GestureLeft')
+      agent.play('DeepIdle1')
 
 
 
-
+      agent.play('LookDownLeft', 5000, function() {
+        clippy.load('Rocky', function(agent2) {
+          agent2.show(false)
+          agent2.moveTo($(document).width() / 2 + 100, 12)
+          agent2.play('GetAttention')
+          console.log(agent2.animations())
+        }, 3000)
+      })
 
     }, 2000)
-  });
+  }, 5000);
 </script>
 </body>
 </html>
