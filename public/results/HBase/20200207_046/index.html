@@ -69,7 +69,7 @@
 <body>
 
 <div class="tableTitle">
-  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_032</a>)<br/>
+  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_046</a>)<br/>
 </div>
 
 <div id="TSVSource" class="source">
@@ -93,12 +93,12 @@
     'At your service',
     'Helloo'
   ]
+
   clippy.load('Genius', function(agent){
     // Do anything with the loaded agent
-
+    agent.moveTo(($(document).width() / 2) - 50, $('.tableTitle')[0].offsetTop + 15)
     setTimeout(() => {
 
-      agent.moveTo(537, 12)
       agent.show(false)
       agent.play('Greeting')
       agent.speak('Do you have some tests to inspect?', false)
@@ -111,8 +111,10 @@
 
       agent.play('LookLeft')
       agent.play('GestureLeft')
+      agent.play('DeepIdle1')
 
-      agent.stop();
+
+
 
 
 
