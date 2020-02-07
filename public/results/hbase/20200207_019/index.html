@@ -12,6 +12,8 @@
   <script type="text/javascript" src="/js/jquery.filtertable.min.js"></script>
   <script type="text/javascript" src="/js/bindWithDelay.js"></script>
   <script type="text/javascript" src="/js/onDelay.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://gitcdn.xyz/repo/pi0/clippyjs/master/assets/clippy.css">
   
   <script>
   $(function() {
@@ -68,7 +70,7 @@
 <body>
 
 <div class="tableTitle">
-  HBase Test Report (<a href="info.html">20200207_004</a>)<br/>
+  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_019</a>)<br/>
 </div>
 
 <div id="TSVSource" class="source">
@@ -79,5 +81,41 @@
 
 </div>
 
+
+<!-- Add these scripts to  the bottom of the page -->
+<script src="https://unpkg.com/jquery@3.2.1"></script>
+
+<script src="https://unpkg.com/clippyjs@latest"></script>
+
+<script type="text/javascript">
+
+  var talks = [
+    'How can i help you?',
+    'Nice day!',
+    'Glad to meet you.',
+    'At your service',
+    'Helloo'
+  ]
+  clippy.load('Genius', function(agent){
+    // Do anything with the loaded agent
+
+    const move = () => {
+      agent.moveTo(100, 100)
+    }
+    move()
+    agent.show();
+
+
+    const speak = () => {
+      agent.speak('I am ' + 'a Genius!' + ', ' + talks[~~(Math.random() * talks.length)])
+      agent.animate()
+    }
+    $(agent._el).click(() => speak())
+    speak()
+    setInterval(() => {
+      agent.animate()
+    }, 2000)
+  });
+</script>
 </body>
 </html>
