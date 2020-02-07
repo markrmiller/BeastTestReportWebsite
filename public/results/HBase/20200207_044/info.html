@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <title>HBeast Report Info</title>
+  </head>
+  <body>
+<p>Fri 07 Feb 2020 01:22:01 PM CST<pre>On branch HBASE-23787
+Your branch is ahead of 'apache/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+	beast.sh
+
+nothing added to commit but untracked files present (use "git add" to track)</pre><br/><br/>GIT LOG -10<pre>commit d4bab91c3323a866b57766f35fc0297d936319b9
+Author: Mark Miller &lt;markrmiller@apache.org&gt;
+Date:   Fri Feb 7 01:39:57 2020 -0600
+
+    WIP: work on network items.
+
+commit 5e4ed1bd35595fc601f9a7129dd1b3742ce8d78b
+Author: Mark Miller &lt;markrmiller@apache.org&gt;
+Date:   Wed Feb 5 21:19:57 2020 -0600
+
+    WIP: work on 127.0.0.1
+
+commit f3e7ca7c5e3ff30f89fdc3592ecda1c885bee4ac
+Author: Mark Miller &lt;markrmiller@apache.org&gt;
+Date:   Mon Feb 3 21:01:27 2020 -0600
+
+    HBASE-23787: TestSyncTimeRangeTracker fails quite easily and allocates a very expensive array.
+
+commit 1295d058ad183752ea8c4c0f66de35bad0b0368b
+Author: Bharath Vissapragada &lt;bharathv@apache.org&gt;
+Date:   Thu Feb 6 13:35:57 2020 -0800
+
+    Add Bharath Vissapragada to developers list. (#1139)
+
+commit 867b1e9cbca6217da84d12b8a1772af8e607bd36
+Author: stack &lt;stack@apache.org&gt;
+Date:   Wed Feb 5 21:47:34 2020 -0800
+
+    HBASE-23779 Up the default fork count; make count relative to CPU count (#1108)
+    ADDENDUM: Try this way of setting MAVEN_ARGS
+
+commit 5b4545de5ec8380c827bf4600f4940452eaea782
+Author: Nick Dimiduk &lt;ndimiduk@apache.org&gt;
+Date:   Wed Feb 5 14:41:51 2020 -0800
+
+    HBASE-23802 Remove unnecessary Configuration instantiation in LossyAccounting (#1127)
+    
+    Signed-off-by: stack &lt;stack@apache.org&gt;
+
+commit b49ec5807349ab566675063b8280611aea2dd681
+Author: Michael Stack &lt;saintstack@users.noreply.github.com&gt;
+Date:   Tue Feb 4 20:47:02 2020 -0800
+
+    HBASE-23779 Up the default fork count; make count relative to CPU count (#1108)
+    
+    Set the fork count for first and second parts to be 0.5C. Add a bit of
+    doc too on this as well as some qualification on our test categories.
+    Also adds -T0.5C to MAVEN_ARGS in the hbase personality.
+
+commit 3a1a39d40d8a4733c5e657793eaec1c4cf40dde8
+Author: stack &lt;stack@apache.org&gt;
+Date:   Tue Feb 4 16:39:33 2020 -0800
+
+    HBASE-23789 [Flakey Tests] ERROR [Time-limited test] balancer.HeterogeneousRegionCountCostFunction(199): cannot read rules file located at ' /tmp/hbase-balancer.rules '; ADDENDUM Missed adding these files.
+
+commit 9cc7a711e616566ecedb8620a1c8b8a29c3d27b0
+Author: stack &lt;stack@apache.org&gt;
+Date:   Tue Feb 4 12:30:09 2020 -0800
+
+    HBASE-23789 [Flakey Tests] ERROR [Time-limited test] balancer.HeterogeneousRegionCountCostFunction(199): cannot read rules file located at ' /tmp/hbase-balancer.rules '
+
+commit 6ba1df3b3932ce5825cb43511a7483e64f9471f9
+Author: Nick Dimiduk &lt;ndimiduk@apache.org&gt;
+Date:   Tue Feb 4 16:04:14 2020 -0800
+
+    HBASE-23792 [Flakey Test] TestExportSnapshotNoCluster.testSnapshotWithRefsExportFileSystemState (#1124)
+    
+    1. Survive flakey rerunning by converting the static BeforeClass stuff
+       into instance-level Before.
+    2. Break the test method into two, one for running over each of the
+       snapshot manifest versions.
+    
+    Signed-off-by: stack &lt;stack@apache.org&gt;</pre></p>
+  </body>
+</html>
