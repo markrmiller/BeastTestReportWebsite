@@ -5,6 +5,7 @@
   <title>BeastTestReport</title>
 
   <link rel="stylesheet" href="/css/csvtable.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="https://gitcdn.xyz/repo/pi0/clippyjs/master/assets/clippy.css">
 
   <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/js/jquery.csvToTable.js"></script>
@@ -68,7 +69,7 @@
 <body>
 
 <div class="tableTitle">
-  HBase Test Report (<a href="info.html">20200207_017</a>)<br/>
+  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_031</a>)<br/>
 </div>
 
 <div id="TSVSource" class="source">
@@ -79,5 +80,44 @@
 
 </div>
 
+
+<!-- Add these scripts to  the bottom of the page -->
+<script src="https://unpkg.com/clippyjs@latest"></script>
+
+<script type="text/javascript">
+
+  var talks = [
+    'How can i help you?',
+    'Nice day!',
+    'Glad to meet you.',
+    'At your service',
+    'Helloo'
+  ]
+  clippy.load('Genius', function(agent){
+    // Do anything with the loaded agent
+
+    setTimeout(() => {
+
+      agent.moveTo(537, 12)
+      agent.show(false)
+      agent.play('Greeting')
+      agent.speak('Do you have some tests to inspect?', false)
+      agent.play('GetWizardy')
+      agent.speak('I love tests.')
+
+      agent.play('Searching')
+      agent.speak('I have an idea! We could fix these tests together!')
+      agent.play('GetAttention')
+
+      agent.play('LookLeft')
+      agent.play('GestureLeft')
+      agent.speak('Im gonna chill over hear if you need anything.')
+
+
+
+
+    }, 2000)
+  });
+</script>
 </body>
 </html>
