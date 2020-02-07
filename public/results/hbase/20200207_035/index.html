@@ -5,6 +5,7 @@
   <title>BeastTestReport</title>
 
   <link rel="stylesheet" href="/css/csvtable.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="https://gitcdn.xyz/repo/pi0/clippyjs/master/assets/clippy.css">
 
   <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/js/jquery.csvToTable.js"></script>
@@ -12,8 +13,6 @@
   <script type="text/javascript" src="/js/jquery.filtertable.min.js"></script>
   <script type="text/javascript" src="/js/bindWithDelay.js"></script>
   <script type="text/javascript" src="/js/onDelay.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="https://gitcdn.xyz/repo/pi0/clippyjs/master/assets/clippy.css">
   
   <script>
   $(function() {
@@ -70,7 +69,7 @@
 <body>
 
 <div class="tableTitle">
-  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_020</a>)<br/>
+  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_035</a>)<br/>
 </div>
 
 <div id="TSVSource" class="source">
@@ -83,8 +82,6 @@
 
 
 <!-- Add these scripts to  the bottom of the page -->
-<script src="https://unpkg.com/jquery@3.2.1"></script>
-
 <script src="https://unpkg.com/clippyjs@latest"></script>
 
 <script type="text/javascript">
@@ -99,21 +96,26 @@
   clippy.load('Genius', function(agent){
     // Do anything with the loaded agent
 
-    const move = () => {
-      agent.moveTo(100, 100)
-    }
-    move()
-    agent.show();
+    setTimeout(() => {
+
+      agent.moveTo(537, $('.filter-table').offsetTop)
+      agent.show(false)
+      agent.play('Greeting')
+      agent.speak('Do you have some tests to inspect?', false)
+      agent.play('GetWizardy')
+      agent.speak('I love tests.')
+
+      agent.play('Searching')
+      agent.speak('I have an idea! We could fix these tests together!')
+      agent.play('GetAttention')
+
+      agent.play('LookLeft')
+      agent.play('GestureLeft')
 
 
-    const speak = () => {
-      agent.speak('I am ' + 'a Genius!' + ', ' + talks[~~(Math.random() * talks.length)])
-      agent.animate()
-    }
-    $(agent._el).click(() => speak())
-    speak()
-    setInterval(() => {
-      agent.animate()
+
+
+
     }, 2000)
   });
 </script>
