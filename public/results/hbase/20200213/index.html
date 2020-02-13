@@ -32,7 +32,7 @@
         $('#TSVTableId').filterTable({
           minRows: 0,
           containerTag: 'div',
-          label: 'Click headers to sort, click failed tests for more, search to the right.',
+          label: 'Click headers to sort, click failed tests for more, search to the right, double click the old guy.',
           callback: function(term, table) {
             table.find('tr').removeClass('striped').filter(':visible:even').addClass('striped');
             table.find('.error').remove();
@@ -69,7 +69,7 @@
 <body>
 
 <div class="tableTitle">
-  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_041</a>)<br/>
+  HBase Test Report (<a style="font-size: medium" href="info.html">20200213</a>)<br/>
 </div>
 
 <div id="TSVSource" class="source">
@@ -87,18 +87,18 @@
 <script type="text/javascript">
 
   var talks = [
-    'How can i help you?',
-    'Nice day!',
-    'Glad to meet you.',
-    'At your service',
-    'Helloo'
+    "Doesn't look like this TestSplitWalDataLoss#test is going to fix itself ...",
+    "In my day, we didn't let tests get this bad to begin with ..."
   ]
-  clippy.load('Genius', function(agent){
-    // Do anything with the loaded agent
+  window.CLIPPY_CDN = '/avatars/'
+  clippy.load('Genius', function(agent) {
+    $(agent._el).dblclick(() => agent.hide())
+    agent.hide(true)
 
+    // Do anything with the loaded agent
+    agent.moveTo(($(document).width() / 2) - 50, $('.tableTitle')[0].offsetTop + 15)
     setTimeout(() => {
 
-      agent.moveTo(537, $('div.filter-table').offestTop)
       agent.show(false)
       agent.play('Greeting')
       agent.speak('Do you have some tests to inspect?', false)
@@ -111,13 +111,28 @@
 
       agent.play('LookLeft')
       agent.play('GestureLeft')
+      agent.play('DeepIdle1')
 
+      const speak = () => {
+        agent.speak(talks[~~(Math.random() * talks.length)])
+        agent.animate()
+      }
 
+      setInterval(() => {
+        speak();
+      }, 10000 + (Math.random() * 4000))
 
-
+      // agent.play('LookDownLeft', 5000, function() {
+      //   clippy.load('Rocky', function(agent2) {
+      //     agent2.show(false)
+      //     agent2.moveTo($(document).width() / 2 + 100, 12)
+      //     agent2.play('GetAttention')
+      //     console.log(agent2.animations())
+      //   }, 3000)
+      // })
 
     }, 2000)
-  });
+  }, 3000);
 </script>
 </body>
 </html>

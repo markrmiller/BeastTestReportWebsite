@@ -4,20 +4,20 @@
   <meta charset="utf-8" />
   <title>BeastTestReport</title>
 
-  <link rel="stylesheet" href="/css/csvtable.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/csvtable.css" type="text/css" />
   <link rel="stylesheet" type="text/css" href="https://gitcdn.xyz/repo/pi0/clippyjs/master/assets/clippy.css">
 
-  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/js/jquery.csvToTable.js"></script>
-  <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
-  <script type="text/javascript" src="/js/jquery.filtertable.min.js"></script>
-  <script type="text/javascript" src="/js/bindWithDelay.js"></script>
-  <script type="text/javascript" src="/js/onDelay.js"></script>
+  <script type="text/javascript" src="../../../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../../../js/jquery.csvToTable.js"></script>
+  <script type="text/javascript" src="../../../js/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="../../../js/jquery.filtertable.min.js"></script>
+  <script type="text/javascript" src="../../../js/bindWithDelay.js"></script>
+  <script type="text/javascript" src="../../../js/onDelay.js"></script>
   
   <script>
   $(function() {
 
-      $('#TSVTable').CSVToTable('hbase.tsv', { loadingText: 'Loading Good Data...', loadingImage: '/images/loading.gif', startLine: 0, separator: "\t", tableClass: 'TSVTableId', trClass: 'TableRow' }).bind("loadComplete", function() { 
+      $('#TSVTable').CSVToTable('hbase.tsv', { loadingText: 'Loading Good Data...', loadingImage: '../../../images/loading.gif', startLine: 0, separator: "\t", tableClass: 'TSVTableId', trClass: 'TableRow' }).bind("loadComplete", function() { 
         $('#TSVTableId').tablesorter({
           headers: {
             2: { sorter: "digit", empty : "top" }, // sort empty cells to the top
@@ -69,7 +69,7 @@
 <body>
 
 <div class="tableTitle">
-  HBase Test Report (<a style="font-size: medium" href="info.html">20200207_055</a>)<br/>
+  <img src="apache-hbase-logo_0.webp" alt="HBase Logo" width="224" height="68">HBase Test Report (<a style="font-size: medium" href="info.html">20200207_055</a>)<br/>
 </div>
 
 <div id="TSVSource" class="source">
@@ -88,15 +88,17 @@
 
   var talks = [
     "Doesn't look like this TestSplitWalDataLoss#test is going to fix itself ...",
-    "In my day, we didn't let tests get this bad to begin with ..."
+    "My dad would always say, 'Thread.sleep is the devils playground'",
+    "When the tests are fast, everyone wins!",
+    "I bet we could make these tests twice as fast!"
   ]
-  window.CLIPPY_CDN = '/avatars/'
+  window.CLIPPY_CDN = '../../../avatars/'
   clippy.load('Genius', function(agent) {
     $(agent._el).dblclick(() => agent.hide())
     agent.hide(true)
 
     // Do anything with the loaded agent
-    agent.moveTo(($(document).width() / 2) - 50, $('.tableTitle')[0].offsetTop + 15)
+    agent.moveTo(($(document).width() / 2) - 50, $('.tableTitle')[0].offsetTop + 40)
     setTimeout(() => {
 
       agent.show(false)
@@ -114,14 +116,21 @@
       agent.play('DeepIdle1')
 
       const speak = () => {
+        agent.show(false)
         agent.speak(talks[~~(Math.random() * talks.length)])
         agent.animate()
       }
 
       setInterval(() => {
+  
         speak();
-      }, 10000 + (Math.random() * 4000))
+      //  agent.hide(false)
+      }, 15000 + (Math.random() * 20000))
 
+
+      agent.play('Wave', 5000, function() {
+
+      })
       // agent.play('LookDownLeft', 5000, function() {
       //   clippy.load('Rocky', function(agent2) {
       //     agent2.show(false)
